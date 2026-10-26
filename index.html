@@ -3097,10 +3097,10 @@ function renderCcjMessage(msg){
   if(iconHash && ccjImages[iconHash]){
     const iconClass = ccjIconClassByHash[iconHash];
     if(iconClass){
-      iconHtml = '<div class="ccj-avatar '+iconClass+'" aria-hidden="true" style="width:56px;height:72px;min-width:56px;border-radius:10px;flex-shrink:0;background-color:'+dialogueBg+';"></div>';
+      iconHtml = '<div class="ccj-avatar '+iconClass+'" aria-hidden="true" style="width:56px;height:72px;min-width:56px;border-radius:'+(ccjAvatarShape==='circle'?'50%':'10px')+';flex-shrink:0;background-color:'+dialogueBg+';"></div>';
     }else{
       // 매우 짧은 초기 렌더링 순간에 클래스가 아직 생성되지 않았을 때의 안전한 대체 표시.
-      iconHtml = '<div style="width:56px;height:72px;min-width:56px;border-radius:10px;position:relative;overflow:hidden;background:'+dialogueBg+';flex-shrink:0;"></div>';
+      iconHtml = '<div style="width:56px;height:72px;min-width:56px;border-radius:'+(ccjAvatarShape==='circle'?'50%':'10px')+';position:relative;overflow:hidden;background:'+dialogueBg+';flex-shrink:0;"></div>';
     }
   }else{
     iconHtml = '<div style="width:56px;min-width:56px;"></div>';
